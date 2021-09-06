@@ -4,30 +4,191 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <title>Order Summary Project</title>
+    <style>
+        :root {
+    /*Primary Colors*/
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    /*Neutral Colors*/
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+
+    /*Font-sizes*/
+    --p-font-size: 16px;
+
+    /*Font weights*/
+    --bold: 500;
+    --bolder: 700;
+    --boldest: 900;
+    }
+
+    /*reset*/
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-size: var(--p-font-size);
+        font-family: 'Red Hat Display', sans-serif;
+    }
+
+    .background{
+        background-image: url(img/pattern-background-desktop.svg);
+        background-repeat: no-repeat;
+        background-color: var(--pale-blue);
+        background-size: 100% 33.3%;
+        width: 100%;
+        height: 81vh;
+        padding: 75px 0;
+    }
+
+    @media screen and (max-width: 750px) {
+        .background {
+            background-image: url(img/pattern-background-mobile.svg);
+            padding: 50px 0;
+            height: 90vh;
+        }
+    }
+
+    .card {
+        width: 25%;
+        margin: 0 auto;
+        border-radius: 15px;
+        background: #fff;
+        margin-top: 25px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .card {
+            min-width: 335px;
+            margin-top: 0;
+        }
+    }
+
+    .card-header-image{
+        width: 100%;
+        height: auto;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .card-info {
+        text-align: center;
+        padding: 25px;
+        border-radius: 0 0 15px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-info_margin {
+        margin: 10px 0;
+    }
+
+    .card-info-description, .card-info-text {
+        color: var(--desaturated-blue);
+        line-height: 1.5em;
+
+    }
+
+    .Card-info-title, 
+    .card-info-description, 
+    .card-info-product {
+        width: 90%;
+    }
+
+    .card-info-product {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--very-pale-blue);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .card-info-product-price {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .music-note {
+        margin: 0 15px 0 5px;
+    }
+
+    .product-title {
+        font-weight: var(--boldest);
+    }
+    .card-info-button {
+        width: 95%;
+        font-size: .9em;
+        background: var(--bright-blue);
+        padding: 15px;
+        color: #fff;
+        font-weight: var(--boldest);
+        border-radius: 10px;
+        box-shadow: 5px 8px 15px 3px var(--pale-blue), -5px 8px 15px 1px var(--pale-blue)
+    }
+
+    a {
+        font-weight: var(--bolder);
+        color: hsl(245, 75%, 35%);
+        font-size: .9em;
+    }
+
+    a:active {
+        color: hsl(245, 75%, 75%);
+        text-decoration: none;
+    }
+
+    .card-info-button:active {
+        background: hsl(245, 75%, 65%);
+    }
+
+    .card-cancel {
+        text-decoration: none;
+        color: var(--desaturated-blue);
+    }
+
+    .card-cancel:active {
+        color: hsl(224, 23%, 30%);
+        font-weight: 700;
+    }
+    </style>
 </head>
 <body>
-    <main>
-        <div>
-            <section>
-                <img src="img/illustration-hero.svg" alt="">
-            </section>
-            <section>
-                <h1>Order Summary</h1>
-                <p>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
-                <div>
-                    <img src="img/icon-music.svg" alt="Music note icon">
-                    <span>
-                        Annual Plan
-                    </span>
-                    <span>
-                        $59.99/year
-                    </span>
+    <main class="background">
+        <div class="card">
+            <header class="card-header">
+                <img class="card-header-image" src="img/illustration-hero.svg" alt="">
+            </header>
+            <section class="card-info">
+                <h1 class="card-info-title card-info_margin">Order Summary</h1>
+                <p class="card-info-description card-info_margin">You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+                <div class="card-info-product card-info_margin">
+                    <div class="card-info-product-price">
+                        <img class="music-note" src="img/icon-music.svg" alt="Music note icon">
+                        <div>
+                            <p class="product-title">
+                                Annual Plan
+                            </p>
+                            
+                            <p class="card-info-text">$59.99/year</p>
+                        </div>
+                    </div>
                     <a href="#">Change</a>
                 </div>
-                <button type="button">Proceed to Payment</button>
-                <a href="#">Cancel Order</a>
+                <button class="card-info-button card-info_margin"type="button">Proceed to Payment</button>
+                <a class="card-info_margin card-cancel" href="#">Cancel Order</a>
             </section>
         </div>
     </main>

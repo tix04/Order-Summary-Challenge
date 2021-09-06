@@ -1,0 +1,24 @@
+:root {
+    /*Primary Colors*/
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    /*Neutral Colors*/
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+
+    /*Font-sizes*/
+    --p-font-size: 16px;
+
+    /*Font weights*/
+    --bold: 500;
+    --bolder: 700;
+    --boldest: 900;
+}
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
